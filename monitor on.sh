@@ -1,4 +1,6 @@
 #!/bin/bash
 ifconfig wlan1 down
+macchanger -r wlan1
 iwconfig wlan1 mode monitor
-iwconfig wlan1 up
+ifconfig wlan1 up
+iwconfig wlan1 | grep Mode
