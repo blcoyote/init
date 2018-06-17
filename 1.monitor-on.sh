@@ -1,6 +1,10 @@
 #!/bin/bash
-ifconfig wlan1 down
-macchanger -r wlan1
-iwconfig wlan1 mode monitor
-ifconfig wlan1 up
-iwconfig wlan1 | grep Mode
+
+#determine wlan adaptors. if more than one, use the last
+wlan=iw dev | awk '$1=="Interface"{print $2}' #need verification on multi wlan adaptor system.
+echo $wlan > ../wlan.tmp
+ifconfig wlan down
+macchanger -r wlan
+iwconfig wlan mode monitor
+ifconfig wlan up
+iwconfig wlan | grep Mode
