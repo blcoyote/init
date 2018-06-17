@@ -1,7 +1,7 @@
 #!/bin/bash
 wlan=$(cat ./wlan.tmp)
 ifconfig $wlan down
-macchanger -r $wlan
+macchanger -p $wlan
 iwconfig $wlan mode managed
 ifconfig $wlan up
 iwconfig $wlan | grep Mode
