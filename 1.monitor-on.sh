@@ -5,8 +5,8 @@ wlan=$(iw dev | awk '$1=="Interface"{print $2}') #need verification on multi wla
 if [ -n wlan ]
     then
         echo "Wireless interface found: $wlan"
-        IFS=$'\n' read -d '' -r -a adaptors < $wlan
-        echo $adaptors[0] > ./wlan.tmp
+        echo $wlan > ./wlan.tmp
+        IFS=$'\n' read -d '' -r -a adaptors < ./wlan.tmp
         echo "bringing $adaptors[0] down"
         ifconfig $adaptors[0] down
         echo "spoofing mac"
