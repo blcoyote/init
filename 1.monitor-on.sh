@@ -5,6 +5,7 @@ wlan=$(iw dev | awk '$1=="Interface"{print $2}') #need verification on multi wla
 if [ -n wlan ]
     then
         echo "Wireless interface found: $wlan"
+        readarray a < $wlan
         echo $wlan > ./wlan.tmp
         ifconfig $wlan down
         macchanger -r $wlan
