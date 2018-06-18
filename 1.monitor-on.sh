@@ -6,7 +6,7 @@ if [ -n wlan ]
     then
         echo "Wireless interface found: $wlan"
         readarray a < $wlan
-        echo $wlan > ./wlan.tmp
+        echo $a > ./wlan.tmp
         echo "bringing $wlan down"
         ifconfig $wlan down
         echo "spoofing mac"
