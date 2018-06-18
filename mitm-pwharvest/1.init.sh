@@ -6,3 +6,7 @@ iptables -I INPUT 1 -p tcp --dport 8080 -j ACCEPT
 echo "================================================================================="
 echo "Run 2, 3 & 4 in seperate terminal instances. Run cleanup.sh remove iptables rules"
 echo "================================================================================="
+read -p "Press Enter to continue"
+xterm -e ./2*
+#xterm -e ./3*
+#xterm -e ./4*
