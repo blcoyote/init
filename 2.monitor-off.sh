@@ -6,7 +6,10 @@ if [ -f wlan.tmp ]
         macchanger -p $wlan
         iwconfig $wlan mode managed
         ifconfig $wlan up
+        echo "======================================"
+        echo "Wireless interface put in managed mode"
         iwconfig $wlan | grep Mode
+        echo "======================================"
         rm ./wlan.tmp
     else
         echo "assigned monitor mode wlan not found"

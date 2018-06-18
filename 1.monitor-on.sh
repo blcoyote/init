@@ -7,8 +7,11 @@ if [ -n wlan ]
         echo "Wireless interface found: $wlan"
         readarray a < $wlan
         echo $wlan > ./wlan.tmp
+        echo "bringing $wlan down"
         ifconfig $wlan down
+        echo "spoofing mac"
         macchanger -r $wlan
+        echo "done. Enabling monitor mode"
         iwconfig $wlan mode monitor
         ifconfig $wlan up
         echo "======================================"
